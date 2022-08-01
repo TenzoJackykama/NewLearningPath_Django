@@ -12,5 +12,9 @@ def hello_template(request):
     ctx = { "title" : "Hello Template", "lista" : new_func()}
     return render(request, template_name="home.html", context=ctx)
 
+def hello_params_url(request, name, eta):
+    print(request.user)
+    return render(request, template_name="home.html")
+
 def new_func():
     return [dt.now(), dt.today().strftime('%A')]

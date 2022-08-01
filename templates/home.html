@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 
 {% block title %} {{title}} {% endblock %}
@@ -17,8 +18,35 @@
 
     {% for i in lista %}
 
-        <p>   {{ i }}  </p>
+        <p>   {{ i }} "stampa" </p>
 
     {% endfor %}
 
+
+    {% if get == True %} 
+
+
+    <h1> 
+      inside if block 
+    </h1>
+
+    <p> {{ request.GET.name }} vdfv</p>
+    <p> {{ request.GET.eta }} vdfgvfda</p>
+
+
+    {% for key, value in request.GET.items %}
+        {{ key }} = {{ value }}
+    {% endfor %}
+
+
+    {% else %}
+    <h1> 
+        inside ELSE block 
+    </h1>
+         <p>{{ request.resolver_match.kwargs.name }} name</p>
+         <p>{{ request.resolver_match.kwargs.eta }} years</p>
+
+    {% endif %} 
+
+    
 {% endblock %}

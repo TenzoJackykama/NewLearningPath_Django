@@ -7,13 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% block head %} {% endblock %}
     <title>{% block title %} {% endblock %}</title>
+    <style>
+        body {
+            background-color: rgb(65, 65, 65);
+            color: #fff;
+        }
+    </style>
+
 </head>
 
 {%include 'navbar.html'%}
 
+<h1>this is starting global template for this app</h1>
 
-{% block content %}
-    <h1>this is starting global template for this app</h1>
+{% block content%}
+
 {% endblock content%}
 
 <body>
